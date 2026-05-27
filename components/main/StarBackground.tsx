@@ -41,7 +41,18 @@ const StarsCanvas = () => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
-    setEnabled(!prefersReducedMotion);
+    const isSmallScreen = window.matchMedia("(max-width: 1024px)").matches;
+    const saveData = (navigator as Navigator & { connection?: { saveData?: boolean } })
+      .connection?.saveData;
+
+    if (prefersReducedMotion || isSmallScreen || saveData) return;
+
+    const scheduleEnable = () => setEnabled(true);
+    if ("requestIdleCallback" in window) {
+      (window as any).requestIdleCallback(scheduleEnable);
+    } else {
+      globalThis.setTimeout(scheduleEnable, 1200);
+    }
   }, []);
 
   if (!enabled) return null;

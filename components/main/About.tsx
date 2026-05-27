@@ -117,7 +117,7 @@ const About = () => {
                 alt="Developer Profile Image"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
-                priority
+                sizes="(max-width: 768px) 220px, 250px"
               />
             </div>
           </div>
