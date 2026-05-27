@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <footer className="relative z-30 mt-auto w-full border-t border-white/10 bg-[#030014cc] backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-10 md:px-10">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          <div>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 text-center md:text-left">
+          <div className="flex flex-col items-center md:items-start">
             <h3 className="text-xl font-semibold text-white">Elvis Kanyi</h3>
             <p className="mt-3 max-w-sm text-sm leading-6 text-gray-400">
               Full-stack engineer building performant web experiences and
@@ -19,11 +19,11 @@ const Footer = () => {
             </p>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
               Quick Links
             </h4>
-            <div className="mt-4 flex flex-col gap-3 text-sm text-gray-400">
+            <div className="mt-4 flex flex-col gap-3 text-sm text-gray-400 items-center md:items-start">
               <a href="#hero" className="transition-colors hover:text-white">
                 Home
               </a>
@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center md:items-start">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
               Connect
             </h4>

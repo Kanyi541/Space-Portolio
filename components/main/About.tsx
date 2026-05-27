@@ -23,10 +23,10 @@ const About = () => {
         className="flex flex-col lg:flex-row items-center justify-between w-full max-w-[1200px] gap-12"
       >
         {/* Left Content (Text) */}
-        <div className="flex-[1.2] flex flex-col gap-6 text-start">
+        <div className="flex-[1.2] flex flex-col gap-6 text-center md:text-left items-center md:items-start">
           <motion.div
             variants={slideInFromTop()}
-            className="Welcome-box py-[8px] px-[12px] border border-[#7042f88b] opacity-[0.9] flex items-center gap-2 self-start"
+            className="Welcome-box py-[8px] px-[12px] border border-[#7042f88b] opacity-[0.9] flex items-center gap-2 self-center md:self-start"
           >
             <SparklesIcon className="text-[#b49bff] h-5 w-5 animate-pulse" />
             <h2 className="Welcome-text text-[13px] font-semibold tracking-wider uppercase text-purple-300">
@@ -48,7 +48,7 @@ const About = () => {
 
           <motion.p
             variants={slideInFromLeft(0.7)}
-            className="text-gray-300 leading-relaxed text-base md:text-lg border-l-2 border-[#7042f8] pl-4 bg-white/5 py-3 rounded-r-lg"
+            className="text-gray-300 leading-relaxed text-base md:text-lg border-l-0 md:border-l-2 border-[#7042f8] md:pl-4 bg-white/5 py-3 rounded-lg md:rounded-r-lg"
           >
             I am a dedicated **Full Stack Software Engineer** specializing in crafting immersive, 
             high-performance digital experiences. My engineering philosophy revolves around 

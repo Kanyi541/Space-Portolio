@@ -39,11 +39,11 @@ const Navbar = () => {
         </button>
         {/* Mobile menu dropdown */}
         {menuOpen && (
-          <div className="absolute top-[65px] left-0 w-full bg-[#0300145e] border-t border-[#7042f861] flex flex-col items-center py-4 md:hidden">
-            <a href="/" className="py-2 w-full text-center hover:text-[#b49bff] transition-colors">About me</a>
-            <a href="#skills" className="py-2 w-full text-center hover:text-[#b49bff] transition-colors">Skills</a>
-            <a href="#projects" className="py-2 w-full text-center hover:text-[#b49bff] transition-colors">Projects</a>
-            <div className="flex gap-4 mt-4">
+          <div className="absolute top-[65px] right-4 w-[220px] bg-[#030014e6] border border-[#7042f861] rounded-xl flex flex-col items-end py-4 px-4 md:hidden">
+            <a href="/" className="py-2 w-full text-right hover:text-[#b49bff] transition-colors">About me</a>
+            <a href="#skills" className="py-2 w-full text-right hover:text-[#b49bff] transition-colors">Skills</a>
+            <a href="#projects" className="py-2 w-full text-right hover:text-[#b49bff] transition-colors">Projects</a>
+            <div className="flex gap-4 mt-4 justify-end w-full">
               {Socials.map((social) => {
                 const Icon = iconMap[social.name as SocialName];
                 return (
