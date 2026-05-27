@@ -82,16 +82,29 @@ export const Skill_data = [
   
   export const Socials = [
     {
-      name: "Discord",
-      src: "/instagram.svg",
+      name: "LinkedIn",
+      src: "/linkedin.png",
+      url: "https://www.linkedin.com/in/elvis-kanyi/",
     },
     {
       name: "Facebook",
-      src: "/facebook.svg",
+      src: "/facebook.png",
+      url: "https://www.facebook.com/kanyiwawokabi",
     },
     {
       name: "Instagram",
-      src: "/discord.svg",
+      src: "/instagram.png",
+      url: "https://www.instagram.com/elviskanyi?igsh=aThneTA5dmt3ZjRw",
+    },
+    {
+      name: "WhatsApp",
+      src: "/whatsapp.png",
+      url: "https://wa.me/792802442",
+    },
+    {
+      name: "Discord",
+      src: "/discord.png",
+      url: "https://discord.gg/u599xnXpQ",
     },
   ];
   

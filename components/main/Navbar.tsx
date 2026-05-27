@@ -1,56 +1,65 @@
+"use client";
 import { Socials } from "@/constants";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { BsLinkedin, BsFacebook, BsInstagram, BsWhatsapp, BsDiscord, BsList } from "react-icons/bs";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const iconMap: Record<string, React.ElementType> = {
+    LinkedIn: BsLinkedin,
+    Facebook: BsFacebook,
+    Instagram: BsInstagram,
+    WhatsApp: BsWhatsapp,
+    Discord: BsDiscord,
+  };
+
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-10">
-      <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
-        <a
-          href="#hero"
-          className="h-auto w-auto flex flex-row items-center"
-        >
-          <Image
-            src="/NavLogo.png"
-            alt="logo"
-            width={70}
-            height={70}
-            className="cursor-pointer hover:animate-slowspin"
-          />
-
-          <span className="font-bold ml-[10px] hidden md:block text-gray-300">
-            WebChain Dev
-          </span>
-        </a>
-
-        <div className="w-[500px] h-full flex flex-row items-center justify-between md:mr-20">
-          <div className="flex items-center justify-between w-full h-auto border border-[#7042f861] bg-[#0300145e] mr-[15px] px-[20px] py-[10px] rounded-full text-gray-200">
-            <a href="#about-me" className="cursor-pointer hover:text-[#b49bff] transition-colors">
-              About me
-            </a>
-            <a href="#skills" className="cursor-pointer hover:text-[#b49bff] transition-colors">
-              Skills
-            </a>
-            <a href="#projects" className="cursor-pointer hover:text-[#b49bff] transition-colors">
-              Projects
-            </a>
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#03001417] backdrop-blur-md z-50 px-4 md:px-10">
+      <div className="max-w-7xl mx-auto h-full flex items-center justify-between">
+        <a href="#hero" className="flex items-center">
+          <div className="relative w-[50px] h-[50px] md:w-[70px] md:h-[70px] rounded-full p-[2px] bg-gradient-to-r from-[#7042f8] to-[#00f0ff] overflow-hidden hover:scale-105 transition-all duration-500">
+            {/* Rotating dashed border */}
+            <div className="absolute inset-0 rounded-full border-2 border-dashed border-[#7042f88b] animate-[spin_20s_linear_infinite]" />
+            <Image src="/Elvis.jpeg" alt="logo" fill priority={true} sizes="100vw" className="object-cover" />
           </div>
-        </div>
-
-        <div className="flex flex-row gap-5">
-          {Socials.map((social) => (
-            <Image
-              src={social.src}
-              alt={social.name}
-              key={social.name}
-              width={24}
-              height={24}
-            />
-          ))}
-        </div>
+          <span className="font-bold ml-2 hidden md:block text-gray-300">Elvis Kanyi</span>
+        </a>
+        {/* Desktop nav */}
+        <nav className="hidden md:flex items-center space-x-6">
+          <a href="/" className="cursor-pointer hover:text-[#b49bff] transition-colors">About me</a>
+          <a href="#skills" className="cursor-pointer hover:text-[#b49bff] transition-colors">Skills</a>
+          <a href="#projects" className="cursor-pointer hover:text-[#b49bff] transition-colors">Projects</a>
+        </nav>
+        {/* Mobile hamburger */}
+        <button className="md:hidden text-gray-300 hover:text-[#b49bff]" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
+          <BsList size={28} />
+        </button>
+        {/* Mobile menu dropdown */}
+        {menuOpen && (
+          <div className="absolute top-[65px] left-0 w-full bg-[#0300145e] border-t border-[#7042f861] flex flex-col items-center py-4 md:hidden">
+            <a href="/" className="py-2 w-full text-center hover:text-[#b49bff] transition-colors">About me</a>
+            <a href="#skills" className="py-2 w-full text-center hover:text-[#b49bff] transition-colors">Skills</a>
+            <a href="#projects" className="py-2 w-full text-center hover:text-[#b49bff] transition-colors">Projects</a>
+            <div className="flex gap-4 mt-4">
+              {Socials.map((social) => {
+                const Icon = iconMap[social.name];
+                return (
+                  <Icon
+                    key={social.name}
+                    size={24}
+                    className="text-gray-300 hover:text-[#b49bff] transition-colors cursor-pointer"
+                    onClick={() => window.open(social.url, "_blank")}
+                    aria-label={social.name}
+                  />
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default Navbar;
+export default React.memo(Navbar);

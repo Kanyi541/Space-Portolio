@@ -1,11 +1,13 @@
+import { Inter, Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
+const headingFont = Space_Grotesk({ subsets: ["latin"], weight: "400", style: "normal", display: "swap" });
 import "./globals.css";
-import StarsCanvas from "@/components/main/StarBackground";
+import dynamic from "next/dynamic";
+const StarsCanvas = dynamic(() => import("@/components/main/StarBackground"), { ssr: false });
 import Navbar from "@/components/main/Navbar";
 import Footer from "@/components/main/Footer";
-
-const inter = Inter({ subsets: ["latin"] });
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Space Portfolio",
@@ -18,10 +20,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}
-      >
+    <html lang="en" className={`${inter.className} ${headingFont.className}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Elvis Kanyi Wokabi",
+  "url": "https://your-portfolio-domain.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/elvis-kanyi/",
+    "https://www.facebook.com/kanyiwawokabi",
+    "https://www.instagram.com/elviskanyi",
+    "https://discord.gg/u599xnXpQ"
+  ],
+  "jobTitle": "Full‑Stack Engineer",
+  "alumniOf": "Meru National Polytechnic",
+  "telephone": "+254 111-428",
+  "email": "elviskanyi8@gmail.com"
+}) }}></script>
+        <meta name="theme-color" content="#030014" />
+      </head>
+      <body className="bg-[#01030c] text-gray-200">
         <StarsCanvas />
         <Navbar />
         {children}

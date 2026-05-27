@@ -30,7 +30,7 @@ const About = () => {
           >
             <SparklesIcon className="text-[#b49bff] h-5 w-5 animate-pulse" />
             <h2 className="Welcome-text text-[13px] font-semibold tracking-wider uppercase text-purple-300">
-              Discover My Story
+              Explore My Journey
             </h2>
           </motion.div>
 
