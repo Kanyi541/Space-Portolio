@@ -1,74 +1,96 @@
 import React from "react";
 import {
   RxDiscordLogo,
-  RxGithubLogo,
   RxInstagramLogo,
-  RxTwitterLogo,
   RxLinkedinLogo,
 } from "react-icons/rx";
-
-import { FaYoutube } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-[15px] ">
-        <div className="w-full flex flex-col items-center justify-center m-auto">
-            <div className="w-full h-full flex flex-row items-center justify-around flex-wrap">
-                
+    <footer className="relative z-30 mt-auto w-full border-t border-white/10 bg-[#030014cc] backdrop-blur-md">
+      <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 px-6 py-10 md:px-10">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div>
+            <h3 className="text-xl font-semibold text-white">Elvis Kanyi</h3>
+            <p className="mt-3 max-w-sm text-sm leading-6 text-gray-400">
+              Full-stack engineer building performant web experiences and
+              scalable digital products.
+            </p>
+          </div>
 
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Community</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Youtube</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Github</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Discord</span>    
-                    </p>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">Social Media</div>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <FaYoutube />
-                        <span className="text-[15px] ml-[6px]">Instagram</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxGithubLogo />
-                        <span className="text-[15px] ml-[6px]">Twitter</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                        <RxDiscordLogo />
-                        <span className="text-[15px] ml-[6px]">Linkedin</span>    
-                    </p>
-                </div>
-                <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
-                    <div className="font-bold text-[16px]">About</div>
-                   <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                     
-                        <span className="text-[15px] ml-[6px]">Become Sponsor</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                      
-                        <span className="text-[15px] ml-[6px]">Learning about me</span>    
-                    </p>
-                    <p className="flex flex-row items-center my-[15px] cursor-pointer">
-                  
-                        <span className="text-[15px] ml-[6px]">mifwebchain@gmail.com</span>    
-                    </p>
-                </div>
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
+              Quick Links
+            </h4>
+            <div className="mt-4 flex flex-col gap-3 text-sm text-gray-400">
+              <a href="#hero" className="transition-colors hover:text-white">
+                Home
+              </a>
+              <a href="#skills" className="transition-colors hover:text-white">
+                Skills
+              </a>
+              <a
+                href="#projects"
+                className="transition-colors hover:text-white"
+              >
+                Projects
+              </a>
             </div>
+          </div>
 
-            <div className="mb-[20px] text-[15px] text-center">
-                &copy; WebChain Dev 2023 Inc. All rights reserved
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-gray-300">
+              Connect
+            </h4>
+            <div className="mt-4 flex items-center gap-4 text-xl text-gray-300">
+              <a
+                href="https://github.com/Kanyi541"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="transition-colors hover:text-white"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/elvis-kanyi/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="transition-colors hover:text-white"
+              >
+                <RxLinkedinLogo />
+              </a>
+              <a
+                href="https://www.instagram.com/elviskanyi?igsh=aThneTA5dmt3ZjRw"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                className="transition-colors hover:text-white"
+              >
+                <RxInstagramLogo />
+              </a>
+              <a
+                href="https://discord.gg/u599xnXpQ"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Discord"
+                className="transition-colors hover:text-white"
+              >
+                <RxDiscordLogo />
+              </a>
             </div>
+            <p className="mt-4 text-sm text-gray-400">elviskanyi8@gmail.com</p>
+          </div>
         </div>
-    </div>
-  )
-}
 
-export default Footer
+        <div className="border-t border-white/10 pt-5 text-center text-sm text-gray-400">
+          Tekivo Technologies .2026 All rights reserved
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

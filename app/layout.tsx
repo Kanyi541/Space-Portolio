@@ -43,10 +43,10 @@ export default function RootLayout({
 }) }}></script>
         <meta name="theme-color" content="#030014" />
       </head>
-      <body className="bg-[#01030c] text-gray-200">
+      <body className="bg-[#01030c] text-gray-200 min-h-screen flex flex-col">
         <StarsCanvas />
         <Navbar />
-        {children}
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>
