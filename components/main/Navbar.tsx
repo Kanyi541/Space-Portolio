@@ -3,10 +3,12 @@ import { Socials } from "@/constants";
 import Image from "next/image";
 import React, { useState } from "react";
 import { BsLinkedin, BsFacebook, BsInstagram, BsWhatsapp, BsDiscord, BsList } from "react-icons/bs";
+import type { IconType } from "react-icons";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const iconMap: Record<string, React.ElementType> = {
+  type SocialName = "LinkedIn" | "Facebook" | "Instagram" | "WhatsApp" | "Discord";
+  const iconMap: Record<SocialName, IconType> = {
     LinkedIn: BsLinkedin,
     Facebook: BsFacebook,
     Instagram: BsInstagram,
@@ -43,7 +45,7 @@ const Navbar = () => {
             <a href="#projects" className="py-2 w-full text-center hover:text-[#b49bff] transition-colors">Projects</a>
             <div className="flex gap-4 mt-4">
               {Socials.map((social) => {
-                const Icon = iconMap[social.name];
+                const Icon = iconMap[social.name as SocialName];
                 return (
                   <Icon
                     key={social.name}

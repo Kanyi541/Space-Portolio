@@ -25,7 +25,7 @@ const About = () => {
         {/* Left Content (Text) */}
         <div className="flex-[1.2] flex flex-col gap-6 text-start">
           <motion.div
-            variants={slideInFromTop}
+            variants={slideInFromTop()}
             className="Welcome-box py-[8px] px-[12px] border border-[#7042f88b] opacity-[0.9] flex items-center gap-2 self-start"
           >
             <SparklesIcon className="text-[#b49bff] h-5 w-5 animate-pulse" />

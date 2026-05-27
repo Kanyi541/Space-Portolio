@@ -19,7 +19,7 @@ const HeroContent = () => {
     >
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start">
         <motion.div
-          variants={slideInFromTop}
+          variants={slideInFromTop()}
           className="Welcome-box py-[8px] px-[7px] border border-[#7042f88b] opacity-[0.9]"
         >
           <SparklesIcon className="text-[#b49bff] mr-[10px] h-5 w-5" />
@@ -65,6 +65,8 @@ const HeroContent = () => {
           alt="work icons"
           height={650}
           width={650}
+          priority
+          sizes="(max-width: 768px) 100vw, 650px"
         />
       </motion.div>
     </motion.div>

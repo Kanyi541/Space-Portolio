@@ -1,9 +1,10 @@
-import About from "@/components/main/About";
-import Encryption from "@/components/main/Encryption";
+import dynamic from "next/dynamic";
 import Hero from "@/components/main/Hero";
-import Projects from "@/components/main/Projects";
-import Skills from "@/components/main/Skills";
-import Image from "next/image";
+
+const About = dynamic(() => import("@/components/main/About"));
+const Skills = dynamic(() => import("@/components/main/Skills"));
+const Encryption = dynamic(() => import("@/components/main/Encryption"));
+const Projects = dynamic(() => import("@/components/main/Projects"));
 
 export default function Home() {
   return (

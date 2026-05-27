@@ -8,10 +8,16 @@ import {
 } from "@/constants";
 import React from "react";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import SkillText from "../sub/SkillText";
 
 const Skills = () => {
+  const { ref: videoRef, inView: videoInView } = useInView({
+    triggerOnce: true,
+    rootMargin: "200px",
+  });
+
   // Animation variants for container cascading
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -198,17 +204,22 @@ const Skills = () => {
       </motion.div>
 
       {/* Decorative Video Background Layer (Original Ambient Video) */}
-      <div className="w-full h-full absolute top-0 left-0 pointer-events-none select-none z-[-2]">
+      <div
+        ref={videoRef}
+        className="w-full h-full absolute top-0 left-0 pointer-events-none select-none z-[-2]"
+      >
         <div className="w-full h-full opacity-15 flex items-center justify-center">
-          <video
-            className="w-full h-auto object-cover min-h-full"
-            preload="false"
-            playsInline
-            loop
-            muted
-            autoPlay
-            src="/cards-video.webm"
-          />
+          {videoInView && (
+            <video
+              className="w-full h-auto object-cover min-h-full"
+              preload="none"
+              playsInline
+              loop
+              muted
+              autoPlay
+              src="/cards-video.webm"
+            />
+          )}
         </div>
       </div>
     </section>
