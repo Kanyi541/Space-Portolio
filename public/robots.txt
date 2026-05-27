@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elviskanyi.vercel.app/sitemap.xml
