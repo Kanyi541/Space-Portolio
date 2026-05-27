@@ -42,6 +42,10 @@ export default function RootLayout({
   "email": "elviskanyi8@gmail.com"
 }) }}></script>
         <meta name="theme-color" content="#030014" />
+        <meta
+          name="google-site-verification"
+          content="F-H7qWt8QRPtrifGFm-zYLhD0agIRF2lPqEO9yipZxs"
+        />
       </head>
       <body className="bg-[#01030c] text-gray-200 min-h-screen flex flex-col">
         <StarsCanvas />
